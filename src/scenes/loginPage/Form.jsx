@@ -59,7 +59,7 @@ const Form = () => {
     formData.append("picturePath", values.picture.name);
 
     const savedUserResponse = await fetch(
-      "https://13.124.74.251:3500/auth/register",
+      "https://yujinchoi.p-e.kr/auth/register",
       {
         method: "POST",
         body: formData, //이미지는 application/json형태로 보내지 못하기 때문에 formData를 만들어서 전송함. 
@@ -74,7 +74,7 @@ const Form = () => {
   };
 
   const login = async (values, onSubmitProps) => {
-    const loggedInResponse = await fetch("https://13.124.74.251:3500/auth/login", {
+    const loggedInResponse = await fetch("https://yujinchoi.p-e.kr/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(values),

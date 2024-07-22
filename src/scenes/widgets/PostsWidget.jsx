@@ -13,7 +13,7 @@ const PostsWidget = ({ userId, isProfile }) => {
 
 
   const getPosts = async () => {
-    const response = await fetch("https://13.124.74.251:3500/posts", {
+    const response = await fetch("https://yujinchoi.p-e.kr/posts", {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -30,7 +30,7 @@ const PostsWidget = ({ userId, isProfile }) => {
 
   const getUserPosts = async () => {
     const response = await fetch(
-      `https://13.124.74.251:3500/posts/${userId}/posts`,
+      `https://yujinchoi.p-e.kr/posts/${userId}/posts`,
       {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
