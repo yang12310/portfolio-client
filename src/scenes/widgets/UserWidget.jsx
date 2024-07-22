@@ -21,7 +21,7 @@ const UserWidget = ({ userId, picturePath }) => {
   const mediumMain = palette.neutral.mediumMain;
 
   const getUser = async () => {
-    const response = await fetch(`http://13.124.74.251:3500/users/${userId}`, {
+    const response = await fetch(`https://13.124.74.251:3500/users/${userId}`, {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });

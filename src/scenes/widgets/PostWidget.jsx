@@ -33,7 +33,7 @@ const PostWidget = ({
   const primary = palette.primary.main;
 
   const patchLike = async () => {
-    const response = await fetch(`http://13.124.74.251:3500/posts/${postId}/like`, {
+    const response = await fetch(`https://13.124.74.251:3500/posts/${postId}/like`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -65,7 +65,7 @@ const PostWidget = ({
           height="auto"
           alt="post"
           style={{ borderRadius: "0.75rem", marginTop: "1rem", objectFit:"cover" }}
-          src={`http://13.124.74.251:3500/assets/${picturePath}`}
+          src={`https://13.124.74.251:3500/assets/${picturePath}`}
         />
       )}
 

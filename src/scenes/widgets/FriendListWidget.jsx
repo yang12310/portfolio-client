@@ -18,7 +18,7 @@ const FriendListWidget = ({ userId }) => {
 
   const getFriends = async () => {
     const response = await fetch(
-      `http://13.124.74.251:3500/users/${userId}/friends`,
+      `https://13.124.74.251:3500/users/${userId}/friends`,
       {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
