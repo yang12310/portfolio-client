@@ -16,6 +16,7 @@ const ProfilePage = () => {
   const loggedUser = useSelector((state) => state.user);
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
 
+  console.log(userId);
   const getUser = async () => {
     const response = await fetch(`https://yujinchoi.p-e.kr/users/${userId}`, {
       method: "GET",
