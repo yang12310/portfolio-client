@@ -53,10 +53,10 @@ const LoginPage = () => {
               borderLeft = "1px solid #EFEFEF"
             >
               <Typography color={theme.palette.primary.main}textAlign = "center" fontWeight="600" variant="h2" sx={{ mb: "0.8rem" }}>
-                NewSocial
+                U-Jeans
               </Typography>
               <Typography textAlign = "center" fontWeight="500" variant="h5" sx={{ mb: "2rem" }}>
-                계정을 생성하거나 뉴소셜에 로그인하여 <br/>일상을 공유해보세요.
+                계정을 생성하거나 u-Jeans에 로그인하여 <br/>일상을 공유해보세요.
               </Typography>
               <Form />
             </Box>
@@ -72,7 +72,7 @@ const LoginPage = () => {
             backgroundColor={theme.palette.background.alt}
           >
             <Typography fontWeight="500" variant="h5" sx={{ mb: "1.5rem" }}>
-              계정을 생성하거나 뉴소셜에 로그인하여 <br/> 일상을 공유해보세요.
+              계정을 생성하거나 U-Jeans에 로그인하여 <br/> 일상을 공유해보세요.
             </Typography>
             <Form />
           </Box>

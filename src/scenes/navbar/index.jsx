@@ -40,7 +40,7 @@ const Navbar = () => {
             },
           }}
         >
-          NewSocial
+          U-Jeans
       </Typography>) :(
           <Typography
           width="17%"
@@ -54,7 +54,7 @@ const Navbar = () => {
             },
           }}
         >
-          NewSocial
+          U-Jeans
       </Typography>
       )}
       {isNonMobileScreens && (
