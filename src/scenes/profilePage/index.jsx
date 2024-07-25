@@ -7,16 +7,23 @@ import FriendListWidget from "scenes/widgets/FriendListWidget";
 import MyPostWidget from "scenes/widgets/MyPostWidget";
 import PostsWidget from "scenes/widgets/PostsWidget";
 import UserWidget from "scenes/widgets/UserWidget";
+import { useNavigate } from "react-router-dom";
 
 const ProfilePage = () => {
   const [user, setUser] = useState(null);
   const { userId } = useParams();
+  // const [userId, setUserId] = useState(userIdParam);
   const token = useSelector((state) => state.token);
   const posts = useSelector((state) => state.posts);
   const loggedUser = useSelector((state) => state.user);
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
 
-  console.log(userId);
+  // const navigate = useNavigate();
+  // navigate(0);
+  
+  // setUserId(userIdParam);
+
+  console.log("useParam", userId);
   const getUser = async () => {
     const response = await fetch(`https://choiyujin.p-e.kr/users/${userId}`, {
       method: "GET",

@@ -35,8 +35,8 @@ const LoginPage = () => {
     <Box position="relative" sx={{width:"100%", height:"100%"}}>
       <Box position="absolute" left="0%" top="50%" width="100%" sx={{transform:'translateY(-50%)'}}>
         {isNonMobileScreens ? (
-          <FlexBetween p="2rem 4rem">
-            <Box width="50%" p="1.5rem" m="2rem">
+          <FlexBetween p="2rem 4rem" maxWidth="70%" margin="0 auto">
+            <Box width="45%" p="1.5rem" m="2rem">
               <img 
                 width="100%"
                 height="auto"
@@ -45,7 +45,7 @@ const LoginPage = () => {
               />
             </Box>
             <Box
-              width="50%"
+              width="55%"
               p="2.4rem 1.5rem"
               m="2rem"
               borderRadius="1.5rem"
