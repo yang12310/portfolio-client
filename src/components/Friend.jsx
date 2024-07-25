@@ -23,7 +23,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
   const patchFriend = async () => {
     if(_id !== friendId){
       const response = await fetch(
-        `https://yujinchoi.p-e.kr/users/${_id}/${friendId}`,
+        `https://choiyujin.p-e.kr/users/${_id}/${friendId}`,
         {
           method: "PATCH",
           headers: {
@@ -45,7 +45,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
         <Box
           onClick={() => {
             navigate(`/profile/${friendId}`);
-            // navigate(0);
+            navigate(0);
           }}
         >
           <Typography

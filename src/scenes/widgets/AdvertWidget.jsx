@@ -21,12 +21,11 @@ const AdvertWidget = () => {
         width="100%"
         height="auto"
         alt="advert"
-        src="https://yujinchoi.p-e.kr/assets/ads.jpg"
+        src="https://choiyujin.p-e.kr/assets/ads.jpg"
         style={{ borderRadius: "0.75rem", margin: "1.25rem 0" }}
       />
-      <Typography color="#555">
-        Your pathway to stunning and immaculate beauty and made sure your skin
-        is exfoliating skin and shining like light.
+      <Typography color="#555" fontSize="15px">
+      압도적인 비주얼과 화려한 퍼포먼스의 K-POP, 트렌디하고 파워풀한 매력의 HIP-HOP 그리고 KOREAN DJ의 폭발적인 댄스뮤직이 여러분 앞에 펼쳐집니다.
       </Typography>
     </WidgetWrapper>
   );

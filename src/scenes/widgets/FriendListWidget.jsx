@@ -18,7 +18,7 @@ const FriendListWidget = ({ userId }) => {
 
   const getFriends = async () => {
     const response = await fetch(
-      `https://yujinchoi.p-e.kr/users/${userId}/friends`,
+      `https://choiyujin.p-e.kr/users/${userId}/friends`,
       {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
@@ -62,9 +62,9 @@ const FriendListWidget = ({ userId }) => {
         fontWeight="600"
         sx={{ mb: "1.5rem" }}
       >
-        Suggested for you
+        Friends List
       </Typography>
-      <Box display="flex" flexDirection="column" gap="1.5rem" >
+      <Box display="flex" flexDirection="column" gap="1.2rem" >
         {pageFriends.map((friend) => (
           <Friend
             key={friend._id}

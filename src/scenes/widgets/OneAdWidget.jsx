@@ -1,5 +1,5 @@
 
-import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 import FlexBetween from "components/FlexBetween";
 import LinesEllipsis from 'react-lines-ellipsis'
 
@@ -18,19 +18,18 @@ const OneAdWidget = ({post}) => {
             width="100px"
             height="75px"
             alt="feed"
-            src={`https://yujinchoi.p-e.kr/assets/${post.picturePath}`}
+            src={`https://choiyujin.p-e.kr/assets/${post.picturePath}`}
             style={{ borderRadius: "0.5rem", objectFit:"cover" }}
           />
-          <Box width="calc(100% - 100px)">
+          <Box width="calc(100% - 100px)" fontSize="15px">
             <LinesEllipsis 
               text={post.description}
               maxLine='2'
               ellipsis='...'
               trimRight
               basedOn='letters'
-            
             />
-            <Typography variant="h6" color={mediumMain} mt="1rem">@mememe</Typography>
+            <Typography variant="h6" color={mediumMain} mt="1rem">@official</Typography>
           </Box>
         </FlexBetween>
       </Box>

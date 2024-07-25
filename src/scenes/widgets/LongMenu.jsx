@@ -48,7 +48,7 @@ function ConfirmationDialogRaw(props) {
   const handleOk = () => {
     if(command == "삭제"){
       const postDelete = async () => {
-        const response = await fetch(`https://yujinchoi.p-e.kr/posts/delete/${userId}/${postId}`, {
+        const response = await fetch(`https://choiyujin.p-e.kr/posts/delete/${userId}/${postId}`, {
           method: "DELETE",
           headers: { Authorization: `Bearer ${token}` },
         });
@@ -58,7 +58,7 @@ function ConfirmationDialogRaw(props) {
       postDelete();
     } else if (command == "수정"){
       const postPatch = async () => {
-        const response = await fetch(`https://yujinchoi.p-e.kr/posts/patch/${userId}/${postId}`, {
+        const response = await fetch(`https://choiyujin.p-e.kr/posts/patch/${userId}/${postId}`, {
           method: "PATCH",
           headers: {
              Authorization: `Bearer ${token}`,
@@ -86,7 +86,7 @@ function ConfirmationDialogRaw(props) {
     >
       <DialogTitle sx={{fontSize:"1rem",padding:"1rem", borderBottom:"1px solid #efefef"}}>{command}</DialogTitle>
       { command == "삭제" ?  
-          <DialogContent dividers>{message}</DialogContent> 
+          <DialogContent sx={{marginTop:"24px"}}>{message}</DialogContent> 
         : <WidgetWrapper sx={{border:"none",marginBottom:"0", padding:"0em 1em"}}>
             <InputBase
               placeholder="What's on your mind?"
@@ -94,6 +94,10 @@ function ConfirmationDialogRaw(props) {
               value={post}
               sx={{
                 width: "100%",
+                backgroundColor:"#F7F7F7",
+                marginTop:"16px",
+                padding:"8px 12px",
+                borderRadius:"5px"
               }}
             />
             <Box>
@@ -102,7 +106,7 @@ function ConfirmationDialogRaw(props) {
                 height="auto"
                 alt="post"
                 style={{ borderRadius: "0.75rem", marginTop: "1rem", objectFit:"cover" }}
-                src={`https://yujinchoi.p-e.kr/assets/${picturePath}`}
+                src={`https://choiyujin.p-e.kr/assets/${picturePath}`}
               />
             </Box>
           </WidgetWrapper>
@@ -187,7 +191,7 @@ export default function LongMenu({postId, userId, description, picturePath}) {
         postId={postId}
         description={description}
         picturePath={picturePath}
-        message = {command == "삭제"? "삭제하시겠습니까? " : "수정하시겠습니까?"}
+        message = {command == "삭제"? "피드를 삭제하시겠습니까? " : "피드를 수정하시겠습니까?"}
         onClose={handleConfirmationDialogClose}
       />
     </div>

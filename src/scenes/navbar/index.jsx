@@ -27,9 +27,10 @@ const Navbar = () => {
 
   return (
     <FlexBetween padding="0.75rem 7%" backgroundColor={alt}>
+      {isNonMobileScreens ? (
       <Typography
           width="26%"
-          fontWeight="700"
+          fontWeight="800"
           fontSize="clamp(1rem, 3rem, 3.31rem)"
           color="primary"
           onClick={() => navigate("/home")}
@@ -40,7 +41,22 @@ const Navbar = () => {
           }}
         >
           NewSocial
+      </Typography>) :(
+          <Typography
+          width="17%"
+          fontWeight="800"
+          fontSize="40px"
+          color="primary"
+          onClick={() => navigate("/home")}
+          sx={{
+            "&:hover": {
+              cursor: "pointer",
+            },
+          }}
+        >
+          NewSocial
       </Typography>
+      )}
       {isNonMobileScreens && (
         <Box
           backgroundColor="#F1F3F7"

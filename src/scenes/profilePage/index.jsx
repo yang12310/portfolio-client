@@ -18,7 +18,7 @@ const ProfilePage = () => {
 
   console.log(userId);
   const getUser = async () => {
-    const response = await fetch(`https://yujinchoi.p-e.kr/users/${userId}`, {
+    const response = await fetch(`https://choiyujin.p-e.kr/users/${userId}`, {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -52,9 +52,10 @@ const ProfilePage = () => {
           mt={isNonMobileScreens ? undefined : "2rem"}
         >
           { userId==loggedUser._id ? 
-            <MyPostWidget picturePath={user.picturePath} isProfile={true}/> : null
+            <MyPostWidget picturePath={user.picturePath} isProfile={true}/> 
+            : null
           }
-          <Box m="2rem 0" />
+         
           <PostsWidget userId={userId} isProfile ={true}/>
         </Box>
       </Box>
