@@ -72,7 +72,7 @@ const LoginPage = () => {
             backgroundColor={theme.palette.background.alt}
           >
             <Typography fontWeight="500" variant="h5" sx={{ mb: "1.5rem" }}>
-              계정을 생성하거나 U-Jeans에 로그인하여 <br/> 일상을 공유해보세요.
+              ID: guest@mail.com Password: guest <br />를 이용하여 U-Jeans에 로그인할 수 있습니다. 
             </Typography>
             <Form />
           </Box>
