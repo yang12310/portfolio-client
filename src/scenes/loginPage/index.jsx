@@ -7,31 +7,6 @@ const LoginPage = () => {
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
 
   return (
-    // <Box>
-    //   <Box
-    //     width="100%"
-    //     backgroundColor={theme.palette.background.alt}
-    //     p="1rem 6%"
-    //     textAlign="center"
-    //   >
-    //     <Typography fontWeight="bold" fontSize="32px" color="primary">
-    //       Youth.pedia
-    //     </Typography>
-    //   </Box>
-
-    //   <Box
-    //     width={isNonMobileScreens ? "50%" : "93%"}
-    //     p="2rem"
-    //     m="2rem auto"
-    //     borderRadius="1.5rem"
-    //     backgroundColor={theme.palette.background.alt}
-    //   >
-    //     <Typography fontWeight="500" variant="h5" sx={{ mb: "1.5rem" }}>
-    //       계정을 생성하거나 유스피디아에 로그인하여 일상을 공유해보세요.
-    //     </Typography>
-    //     <Form />
-    //   </Box>
-    // </Box>
     <Box position="relative" sx={{width:"100%", height:"100%"}}>
       <Box position="absolute" left="0%" top="50%" width="100%" sx={{transform:'translateY(-50%)'}}>
         {isNonMobileScreens ? (
@@ -56,7 +31,7 @@ const LoginPage = () => {
                 U-Jeans
               </Typography>
               <Typography textAlign = "center" fontWeight="500" variant="h5" sx={{ mb: "2rem" }}>
-                계정을 생성하거나 u-Jeans에 로그인하여 <br/>일상을 공유해보세요.
+                ID: guest@mail.com Password: guest <br />를 이용하여 U-Jeans에 로그인할 수 있습니다. 
               </Typography>
               <Form />
             </Box>
@@ -72,7 +47,7 @@ const LoginPage = () => {
             backgroundColor={theme.palette.background.alt}
           >
             <Typography fontWeight="500" variant="h5" sx={{ mb: "1.5rem" }}>
-              ID: guest@mail.com Password: guest <br />를 이용하여 U-Jeans에 로그인할 수 있습니다. 
+              ID: guest@mail.com <br />Password: guest <br />를 이용하여 U-Jeans에 로그인할 수 있습니다. 
             </Typography>
             <Form />
           </Box>

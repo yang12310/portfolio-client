@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {Box,Button,TextField,useMediaQuery,Typography,useTheme} from "@mui/material";
+import {Box,Button,TextField,useMediaQuery,Typography,useTheme,Link} from "@mui/material";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import { Formik } from "formik";
 import * as yup from "yup";
@@ -267,8 +267,15 @@ const Form = () => {
                 ? "계정이 없으신가요? 회원가입하기"
                 : "이미 계정이 있으신가요? 로그인하기"}
             </Typography>
+            <Box>
+              <Link to=""
+              sx={{textDecoration:"none"}}
+
+              >Portfolio 상세설명 보기</Link>
+            </Box>
           </Box>
         </form>
+        
       )}
     </Formik>
   );
