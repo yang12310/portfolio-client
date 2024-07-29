@@ -268,9 +268,8 @@ const Form = () => {
                 : "이미 계정이 있으신가요? 로그인하기"}
             </Typography>
             <Box>
-              <Link to=""
+              <Link to="https://yang12310.github.io/tutorial-desc/"
               sx={{textDecoration:"none"}}
-
               >Portfolio 상세설명 보기</Link>
             </Box>
           </Box>
