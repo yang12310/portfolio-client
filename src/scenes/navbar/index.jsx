@@ -41,7 +41,7 @@ const Navbar = () => {
             width="100%"
             height="auto"
             alt="main"
-            src="https://choiyujin.p-e.kr/assets/logo.png"
+            src="https://choiyujin.p-e.kr/assets/logo1.png"
           />
       </Box>) :(
           <Typography
