@@ -38,17 +38,14 @@ const Navbar = () => {
           }}
         >
           <img 
-            width="100%"
+            width="270px"
             height="auto"
             alt="main"
             src="https://choiyujin.p-e.kr/assets/logo1.png"
           />
       </Box>) :(
-          <Typography
+          <Box
           width="17%"
-          fontWeight="800"
-          fontSize="40px"
-          color="primary"
           onClick={() => navigate("/home")}
           sx={{
             "&:hover": {
@@ -56,8 +53,13 @@ const Navbar = () => {
             },
           }}
         >
-          U-Jeans
-      </Typography>
+          <img 
+            width="170px"
+            height="auto"
+            alt="main"
+            src="https://choiyujin.p-e.kr/assets/logo1.png"
+          />
+      </Box>
       )}
       {isNonMobileScreens && (
         <Box
