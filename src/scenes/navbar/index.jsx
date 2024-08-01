@@ -28,11 +28,8 @@ const Navbar = () => {
   return (
     <FlexBetween padding="0.75rem 7%" backgroundColor={alt}>
       {isNonMobileScreens ? (
-      <Typography
+      <Box
           width="26%"
-          fontWeight="800"
-          fontSize="clamp(1rem, 3rem, 3.31rem)"
-          color="primary"
           onClick={() => navigate("/home")}
           sx={{
             "&:hover": {
@@ -40,8 +37,13 @@ const Navbar = () => {
             },
           }}
         >
-          U-Jeans
-      </Typography>) :(
+          <img 
+            width="100%"
+            height="auto"
+            alt="main"
+            src="https://choiyujin.p-e.kr/assets/logo.png"
+          />
+      </Box>) :(
           <Typography
           width="17%"
           fontWeight="800"

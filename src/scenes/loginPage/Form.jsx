@@ -267,11 +267,11 @@ const Form = () => {
                 ? "계정이 없으신가요? 회원가입하기"
                 : "이미 계정이 있으신가요? 로그인하기"}
             </Typography>
-            <Box>
+            {/* <Box>
               <a href="https://yang12310.github.io/tutorial-desc/" target="_blank"
               sx={{textDecoration:"none"}}
               >Portfolio 상세설명 보기</a>
-            </Box>
+            </Box> */}
           </Box>
         </form>
         
