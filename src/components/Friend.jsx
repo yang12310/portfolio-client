@@ -23,7 +23,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
   const patchFriend = async () => {
     if(_id !== friendId){
       const response = await fetch(
-        `https://choiyujin.p-e.kr/users/${_id}/${friendId}`,
+        `https://yujinchoi.p-e.kr/users/${_id}/${friendId}`,
         {
           method: "PATCH",
           headers: {

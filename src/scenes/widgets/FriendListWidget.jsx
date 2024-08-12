@@ -18,7 +18,7 @@ const FriendListWidget = ({ userId }) => {
 
   const getFriends = async () => {
     const response = await fetch(
-      `https://choiyujin.p-e.kr/users/${userId}/friends`,
+      `https://yujinchoi.p-e.kr/users/${userId}/friends`,
       {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },

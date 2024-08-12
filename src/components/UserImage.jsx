@@ -8,7 +8,7 @@ const UserImage = ({ image, size = "50px" }) => {
         width={size}
         height={size}
         alt="user"
-        src={`https://choiyujin.p-e.kr/assets/${image}`}
+        src={`https://yujinchoi.p-e.kr/assets/${image}`}
       />
     </Box>
   );
