@@ -18,7 +18,7 @@ const OneAdWidget = ({post}) => {
             width="100px"
             height="75px"
             alt="feed"
-            src={`https://yujinchoi.p-e.kr/assets/${post.picturePath}`}
+            src={`http://localhost:3500/assets/${post.picturePath}`}
             style={{ borderRadius: "0.5rem", objectFit:"cover" }}
           />
           <Box width="calc(100% - 100px)" fontSize="15px">

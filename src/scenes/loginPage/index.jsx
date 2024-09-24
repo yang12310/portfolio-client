@@ -16,7 +16,7 @@ const LoginPage = () => {
                 width="100%"
                 height="auto"
                 alt="login"
-                src="https://yujinchoi.p-e.kr/assets/login.png"
+                src="login.png"
               />
             </Box>
             <Box width="55%" m="2rem">

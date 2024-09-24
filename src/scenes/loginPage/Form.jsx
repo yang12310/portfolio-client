@@ -59,7 +59,7 @@ const Form = () => {
     formData.append("picturePath", values.picture.name);
 
     const savedUserResponse = await fetch(
-      "https://yujinchoi.p-e.kr/auth/register",
+      "http://localhost:3500/auth/register",
       {
         method: "POST",
         body: formData, //이미지는 application/json형태로 보내지 못하기 때문에 formData를 만들어서 전송함. 
@@ -74,7 +74,7 @@ const Form = () => {
   };
 
   const login = async (values, onSubmitProps) => {
-    const loggedInResponse = await fetch("https://yujinchoi.p-e.kr/auth/login", {
+    const loggedInResponse = await fetch("http://localhost:3500/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(values),
@@ -133,7 +133,7 @@ const Form = () => {
                   label="First Name"
                   onBlur={handleBlur}
                   onChange={handleChange}
-                  value={values.firstName}
+                  value={values.firstName || ''}
                   name="firstName"
                   error={
                     Boolean(touched.firstName) && Boolean(errors.firstName)
@@ -145,7 +145,7 @@ const Form = () => {
                   label="Last Name"
                   onBlur={handleBlur}
                   onChange={handleChange}
-                  value={values.lastName}
+                  value={values.lastName || ''}
                   name="lastName"
                   error={Boolean(touched.lastName) && Boolean(errors.lastName)}
                   helperText={touched.lastName && errors.lastName}
@@ -155,7 +155,7 @@ const Form = () => {
                   label="Location"
                   onBlur={handleBlur}
                   onChange={handleChange}
-                  value={values.location}
+                  value={values.location || ''}
                   name="location"
                   error={Boolean(touched.location) && Boolean(errors.location)}
                   helperText={touched.location && errors.location}
@@ -165,7 +165,7 @@ const Form = () => {
                   label="Occupation"
                   onBlur={handleBlur}
                   onChange={handleChange}
-                  value={values.occupation}
+                  value={values.occupation || ''}
                   name="occupation"
                   error={
                     Boolean(touched.occupation) && Boolean(errors.occupation)
@@ -213,7 +213,7 @@ const Form = () => {
               label="Email"
               onBlur={handleBlur}
               onChange={handleChange}
-              value={values.email}
+              value={values.email || ''}
               name="email"
               error={Boolean(touched.email) && Boolean(errors.email)}
               helperText={touched.email && errors.email}
@@ -224,7 +224,7 @@ const Form = () => {
               type="password"
               onBlur={handleBlur}
               onChange={handleChange}
-              value={values.password}
+              value={values.password || ''}
               name="password"
               error={Boolean(touched.password) && Boolean(errors.password)}
               helperText={touched.password && errors.password}

@@ -25,7 +25,7 @@ const ProfilePage = () => {
 
   console.log("useParam", userId);
   const getUser = async () => {
-    const response = await fetch(`https://yujinchoi.p-e.kr/users/${userId}`, {
+    const response = await fetch(`http://localhost:3500/users/${userId}`, {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });
