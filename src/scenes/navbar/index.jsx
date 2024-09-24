@@ -41,7 +41,7 @@ const Navbar = () => {
             width="270px"
             height="auto"
             alt="main"
-            src="http://localhost:3500/assets/logo1.png"
+            src="https://yujinchoi.kro.kr/assets/logo1.png"
           />
       </Box>) :(
           <Box
@@ -57,7 +57,7 @@ const Navbar = () => {
             width="170px"
             height="auto"
             alt="main"
-            src="http://localhost:3500/assets/logo1.png"
+            src="https://yujinchoi.kro.kr/assets/logo1.png"
           />
       </Box>
       )}

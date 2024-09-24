@@ -16,7 +16,7 @@ const LoginPage = () => {
                 width="100%"
                 height="auto"
                 alt="login"
-                src="login.png"
+                src={`${process.env.PUBLIC_URL}/login.png`}
               />
             </Box>
             <Box width="55%" m="2rem">
