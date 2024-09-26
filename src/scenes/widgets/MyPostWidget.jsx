@@ -34,7 +34,7 @@ const MyPostWidget = ({ picturePath , isProfile}) => {
       formData.append("picturePath", image.name);
     }
 
-    const response = await fetch(`https://yujinchoi.kro.kr/posts`, {
+    const response = await fetch(`https://yujins.p-e.kr/posts`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
       body: formData,

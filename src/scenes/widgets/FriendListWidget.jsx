@@ -4,8 +4,6 @@ import WidgetWrapper from "components/WidgetWrapper";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setFriends } from "state";
-
-import { TfiArrowCircleDown, TfiArrowCircleUp } from "react-icons/tfi";
 import FlexBetween from "components/FlexBetween";
 
 const FriendListWidget = ({ userId }) => {
@@ -18,7 +16,7 @@ const FriendListWidget = ({ userId }) => {
 
   const getFriends = async () => {
     const response = await fetch(
-      `https://yujinchoi.kro.kr/users/${userId}/friends`,
+      `https://yujins.p-e.kr/users/${userId}/friends`,
       {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },

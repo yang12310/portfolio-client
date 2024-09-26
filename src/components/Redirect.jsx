@@ -3,7 +3,6 @@ import { Navigate, useParams } from 'react-router-dom';
 
 const Redirect = () => {
   const userId = useParams();
-  console.log(userId);
   return (
     <Navigate to ={`/profile/${userId.userId}`} />
   )

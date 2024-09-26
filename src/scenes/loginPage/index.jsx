@@ -26,7 +26,12 @@ const LoginPage = () => {
                 backgroundColor={theme.palette.background.alt}
                 borderLeft = "1px solid #EFEFEF"
               >
-                <Typography color={theme.palette.primary.main}textAlign = "center" fontWeight="600" variant="h2" sx={{ mb: "0.8rem" }}>
+                <Typography color={theme.palette.primary.main}
+                  textAlign = "center" 
+                  fontWeight="600" 
+                  variant="h2" 
+                  sx={{ mb: "0.8rem" }}
+                >
                   U-Jeans
                 </Typography>
                 <Typography textAlign = "center" fontWeight="500" variant="h5" sx={{ mb: "2rem" }}>

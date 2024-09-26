@@ -21,7 +21,7 @@ const UserWidget = ({ userId, picturePath }) => {
   const mediumMain = palette.neutral.mediumMain;
 
   const getUser = async () => {
-    const response = await fetch(`https://yujinchoi.kro.kr/users/${userId}`, {
+    const response = await fetch(`https://yujins.p-e.kr/users/${userId}`, {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });

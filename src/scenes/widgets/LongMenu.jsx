@@ -48,7 +48,7 @@ function ConfirmationDialogRaw(props) {
   const handleOk = () => {
     if(command == "삭제"){
       const postDelete = async () => {
-        const response = await fetch(`https://yujinchoi.kro.kr/posts/delete/${userId}/${postId}`, {
+        const response = await fetch(`https://yujins.p-e.kr/posts/delete/${userId}/${postId}`, {
           method: "DELETE",
           headers: { Authorization: `Bearer ${token}` },
         });
@@ -58,7 +58,7 @@ function ConfirmationDialogRaw(props) {
       postDelete();
     } else if (command == "수정"){
       const postPatch = async () => {
-        const response = await fetch(`https://yujinchoi.kro.kr/posts/patch/${userId}/${postId}`, {
+        const response = await fetch(`https://yujins.p-e.kr/posts/patch/${userId}/${postId}`, {
           method: "PATCH",
           headers: {
              Authorization: `Bearer ${token}`,
@@ -106,7 +106,7 @@ function ConfirmationDialogRaw(props) {
                 height="auto"
                 alt="post"
                 style={{ borderRadius: "0.75rem", marginTop: "1rem", objectFit:"cover" }}
-                src={`https://yujinchoi.kro.kr/assets/${picturePath}`}
+                src={`https://yujins.p-e.kr/assets/${picturePath}`}
               />
             </Box>
           </WidgetWrapper>

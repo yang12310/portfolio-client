@@ -21,7 +21,7 @@ const AdvertWidget = () => {
         width="100%"
         height="auto"
         alt="advert"
-        src="https://yujinchoi.kro.kr/assets/ads.jpg"
+        src="https://yujins.p-e.kr/assets/ads.jpg"
         style={{ borderRadius: "0.75rem", margin: "1.25rem 0" }}
       />
       <Typography color="#555" fontSize="15px">
