@@ -7,6 +7,7 @@ import WidgetWrapper from "components/WidgetWrapper";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "state";
+import MyModal from "scenes/widgets/MyModal";
 
 
 import { PiImageLight,PiVideoCameraLight, PiPaperclipLight } from "react-icons/pi";
@@ -23,6 +24,7 @@ const MyPostWidget = ({ picturePath , isProfile}) => {
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
   const mediumMain = palette.neutral.mediumMain;
   const medium = palette.neutral.medium;
+  const [open, setOpen] = useState(false)
 
   const handlePost = async () => {
     const formData = new FormData();
@@ -32,6 +34,9 @@ const MyPostWidget = ({ picturePath , isProfile}) => {
     if (image) {
       formData.append("picture", image);
       formData.append("picturePath", image.name);
+    } else {
+      setOpen(true)
+      return
     }
 
     const response = await fetch(`https://yujins.p-e.kr/posts`, {
@@ -39,7 +44,7 @@ const MyPostWidget = ({ picturePath , isProfile}) => {
       headers: { Authorization: `Bearer ${token}` },
       body: formData,
     });
-    // debugger;
+
     const data = await response.json();
     if(isProfile){
       const postList = data.filter((item)=>{
@@ -49,8 +54,6 @@ const MyPostWidget = ({ picturePath , isProfile}) => {
     } else{
       dispatch(setPosts({ posts: data}));
     }
- 
-  
     setImage(null);
     setPost("");
   };
@@ -136,10 +139,6 @@ const MyPostWidget = ({ picturePath , isProfile}) => {
                 <PiPaperclipLight color="#624AF3" size="23" />
                 <Typography color={mediumMain}>Files</Typography>
               </FlexBetween>
-              {/* <FlexBetween gap="0.25rem">
-                <MicOutlined sx={{ color: mediumMain }} />
-                <Typography color={mediumMain}>Audio</Typography>
-              </FlexBetween> */}
             </>
           ) : (
             
@@ -163,6 +162,12 @@ const MyPostWidget = ({ picturePath , isProfile}) => {
           POST
         </Button>
       </Box>
+      <MyModal 
+        open={open}
+        setOpen={setOpen}
+        title={"알림"}
+        message={"이미지를 추가해주세요."}
+      />
     </WidgetWrapper>
   );
 };
