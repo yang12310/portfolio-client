@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Navigate, Routes, Route, HashRouter } from "react-router-dom";
 import HomePage from "scenes/homePage";
 import LoginPage from "scenes/loginPage";
 import ProfilePage from "scenes/profilePage";
@@ -17,7 +17,7 @@ function App() {
   
   return (
     <div className="app">
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter>
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Routes>
@@ -33,7 +33,7 @@ function App() {
             <Route exact path="/redirect/:userId" element={<Redirect />}/>
           </Routes>
         </ThemeProvider>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
