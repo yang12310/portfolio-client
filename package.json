@@ -35,8 +35,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
- 
-  "homepage": ".",
+  "homepage": "https://yang12310.github.io/portfolio-client/",
   "eslintConfig": {
     "extends": [
       "react-app",
