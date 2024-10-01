@@ -22,15 +22,15 @@ function App() {
           <CssBaseline />
           <Routes>
             <Route exact path="/" element={<LoginPage />} />
-            <Route
+            <Route exact
               path="/home"
               element={isAuth ? <HomePage /> : <Navigate to="/" />}
             />
-            <Route
+            <Route exact
               path="/profile/:userId"
               element={isAuth ? <ProfilePage /> : <Navigate to="/" />}
             />
-            <Route path="/redirect/:userId" element={<Redirect />}/>
+            <Route exact path="/redirect/:userId" element={<Redirect />}/>
           </Routes>
         </ThemeProvider>
       </BrowserRouter>
