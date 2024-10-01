@@ -7,6 +7,7 @@ import { setFriends } from "state";
 import FlexBetween from "components/FlexBetween";
 
 const FriendListWidget = ({ userId }) => {
+  console.log("userId", userId)
   const dispatch = useDispatch();
   const token = useSelector((state) => state.token);
   const friends = useSelector((state) => state.user.friends);
@@ -52,6 +53,7 @@ const FriendListWidget = ({ userId }) => {
     setPageFriends(selectedFriends);
     setPage (page -1)
   }
+  console.log("friends", friends)
 
   return (
     <WidgetWrapper>
