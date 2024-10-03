@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import {Box,IconButton,InputBase,Typography,Select,MenuItem,FormControl,useTheme,useMediaQuery} from "@mui/material";
 import {Search,Menu,Close} from "@mui/icons-material";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,7 +13,7 @@ import { PiBellLight,PiChatDotsLight,PiUserFill,PiBellSimpleFill,PiGearFill } fr
 import { TiHome } from "react-icons/ti";
 import { RiMessage2Fill } from "react-icons/ri";
 
-const Navbar = () => {
+const Navbar = ({searchValue}) => {
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -24,6 +24,10 @@ const Navbar = () => {
   const neutralLight = theme.palette.neutral.light;
   const alt = theme.palette.background.alt;
   const fullName = `${user.firstName} ${user.lastName}`;
+  //const [ searchValue, setSearchValue ] = useState('');
+
+  
+  
 
   return (
     <FlexBetween padding="0.75rem 7%" backgroundColor={alt}>
@@ -71,7 +75,7 @@ const Navbar = () => {
            <IconButton >
             <Search color="#575757"/>
           </IconButton>
-          <InputBase placeholder="검색어를 입력하세요." />
+          <InputBase placeholder="검색어를 입력하세요." onChange={(e) => searchValue(e.target.value)} />
         </Box>
       )}
 

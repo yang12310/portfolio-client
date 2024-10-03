@@ -3,12 +3,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "state";
 import PostWidget from "./PostWidget";
 
-const PostsWidget = ({ userId, isProfile }) => {
+const PostsWidget = ({ userId, isProfile, searchValue }) => {
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts);
   // const posts=[];
   const token = useSelector((state) => state.token);
   const user = useSelector((state) => state.user);
+
+  // const searched = posts.filter(() => {
+  //   posts.map()
+  // })
 
 
 
@@ -53,7 +57,9 @@ const PostsWidget = ({ userId, isProfile }) => {
 
   return (
     <>
-      {posts?.map(
+      {posts?.filter((item) =>
+        item.description.includes(searchValue)
+      ).map(
         ({
           _id,
           userId,

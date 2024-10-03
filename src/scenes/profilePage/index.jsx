@@ -16,6 +16,7 @@ const ProfilePage = () => {
   const token = useSelector((state) => state.token);
   const posts = useSelector((state) => state.posts);
   const loggedUser = useSelector((state) => state.user);
+  const [ searchValue, setSearchValue ] = useState('');
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
 
   // const navigate = useNavigate();
@@ -42,7 +43,7 @@ const ProfilePage = () => {
 
   return (
     <Box>
-      <Navbar />
+      <Navbar searchValue={setSearchValue}/>
       <Box
         width="100%"
         padding="2rem 6%"
@@ -64,7 +65,7 @@ const ProfilePage = () => {
             : null
           }
          
-          <PostsWidget userId={userId} isProfile ={true}/>
+          <PostsWidget userId={userId} isProfile ={true} searchValue = {searchValue}/>
         </Box>
       </Box>
     </Box>

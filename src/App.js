@@ -8,12 +8,17 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import { themeSettings } from "./theme";
 import Redirect from "components/Redirect";
+import { useEffect } from "react";
+import { setLogin } from "state";
 
 function App() {
   const mode = useSelector((state) => state.mode);
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
   // useSelector에서 갖고오는 토큰이 없으면 Boolean
   const isAuth = Boolean(useSelector((state) => state.token));
+
+  
+  console.log(setLogin)
   
   return (
     <div className="app">
@@ -21,7 +26,9 @@ function App() {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Routes>
-            <Route exact path="/" element={<LoginPage />} />
+            <Route exact path="/" 
+              element={isAuth ? <HomePage /> : <LoginPage />} 
+            />
             <Route exact
               path="/home"
               element={isAuth ? <HomePage /> : <Navigate to="/" />}

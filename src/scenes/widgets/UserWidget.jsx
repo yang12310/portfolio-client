@@ -15,9 +15,10 @@ const UserWidget = ({ userId, picturePath }) => {
   const { palette } = useTheme();
   const navigate = useNavigate();
   const token = useSelector((state) => state.token);
+  const posts = useSelector((state) => state.posts);
+  const loggedInUserId = useSelector((state) => state.user._id);
   const dark = palette.neutral.dark;
   const medium = palette.neutral.medium;
-  const main = palette.neutral.main;
   const mediumMain = palette.neutral.mediumMain;
 
   const getUser = async () => {
@@ -29,7 +30,15 @@ const UserWidget = ({ userId, picturePath }) => {
     setUser(data);
   };
 
-  useEffect(() => {
+  let count = 0;
+    posts.map((item) => {
+      const ele = item.likes;
+      if(loggedInUserId === item.userId) {
+        count = count + Object.keys(item.likes).length
+      }
+    })
+  
+  useEffect( () => {
     getUser();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -37,13 +46,16 @@ const UserWidget = ({ userId, picturePath }) => {
     return null;
   }
 
+  
+ 
+
   const {
     firstName,
     lastName,
     location,
     occupation,
     viewedProfile,
-    impressions,
+    // impressions,
     friends,
   } = user;
 
@@ -124,9 +136,8 @@ const UserWidget = ({ userId, picturePath }) => {
             padding= "2px 0.7rem"
             borderRadius= "30px"
             border= "1px solid #efefef"
-          
           >
-            {impressions}
+            {count}
           </Typography>
         </FlexBetween>
       </Box>
