@@ -14,42 +14,23 @@ const PopularAdsWidget = () => {
   const user = useSelector((state) => state.user);
   const posts = useSelector((state) => state.posts);
   // const ref = useRef([]);
-  const [ref, setRef] = useState({type:1, list:[]});
+  const [isSort, setIsSort] = useState({type:2, list:[]});
 
   //랜덤순
-  const initialLength = () => {
+  const sortHandler = () => {
     if(posts.length > 0) {
       let arr = [...posts];
-      const sort = arr.sort(() => Math.random() - 0.5);
-      setRef({type:1, list:sort});
-    }
-  }
-
-  //하트많은순
-  const heartLength =  () => {
-    if (posts.length > 0) {
-      let arr = [...posts];
-      let sort = arr.sort((a,b) => (Object.keys(b.likes).length - Object.keys(a.likes).length))
-      //setRef(sort);
-      setRef({type:2, list:sort});
-      console.log(sort)  
+      let sort = arr;
+      let type = isSort.type;
+      if(isSort.type === 1) { type = 2; sort = arr.sort((a,b) => (Object.keys(b.likes).length - Object.keys(a.likes).length)) }
+      if(isSort.type === 2) { type = 1; sort = arr.sort(() => Math.random() - 0.5); }
+      setIsSort({type:type, list:sort});
     }
   }
 
   useEffect(()=>{
-    initialLength()
+    sortHandler()
   },[])
-  const sortRef = useRef(false);
-  const handleClick = () => {
-    sortRef.current = !sortRef.current;
-    if(sortRef.current) { //하트많은순\
-      heartLength();
-    }
-    if(!sortRef.current) {//랜덤
-      initialLength();
-    }
-  }
-
 
   return (
     <WidgetWrapper>
@@ -57,10 +38,10 @@ const PopularAdsWidget = () => {
         <Typography color="#333" variant="h4" fontWeight="600" >
           Popular Feed
         </Typography>
-        <Button onClick={(e) => handleClick()}>{ref.type === 1 ? '하트 많은순' : '기본순'}</Button>
+        <Button onClick={(e) => sortHandler()}>{isSort.type === 1 ? '하트 많은순' : '기본순'}</Button>
       </FlexBetween>
     
-      {ref.list.map((item, i)=> (i < 3 ?
+      {isSort.list.map((item, i)=> (i < 3 ?
             <OneAdWidget 
               key={i} 
               post={item}

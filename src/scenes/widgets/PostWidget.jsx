@@ -4,7 +4,7 @@ import { useMediaQuery, Box, Divider, IconButton, Typography, useTheme,} from "@
 import FlexBetween from "components/FlexBetween";
 import Friend from "components/Friend";
 import WidgetWrapper from "components/WidgetWrapper";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPost } from "state";
 import LongMenu from "./LongMenu";
@@ -27,12 +27,18 @@ const PostWidget = ({
   const loggedInUserId = useSelector((state) => state.user._id);
   const isLiked = Boolean(likes[loggedInUserId]);
   const likeCount = Object.keys(likes).length;
-
+  
   const { palette } = useTheme();
   const main = palette.neutral.main;
   const primary = palette.primary.main;
-
+  
+  
+  
+  const isLock = useRef(false)
   const patchLike = async () => {
+    if(isLock.current) { return; }
+    
+    isLock.current = true;
     const response = await fetch(`https://yujins.p-e.kr/posts/${postId}/like`, {
       method: "PATCH",
       headers: {
@@ -41,6 +47,7 @@ const PostWidget = ({
       },
       body: JSON.stringify({ userId: loggedInUserId }), //나의 userId 값을 넘겨준다. (어떤걸 좋아요 누른지 모르니까)
     });
+    setTimeout(() => {isLock.current = false}, 300)
     const updatedPost = await response.json();
     dispatch(setPost({ post: updatedPost }));
   };
