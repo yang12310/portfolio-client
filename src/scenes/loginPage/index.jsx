@@ -85,6 +85,22 @@ const LoginPage = () => {
           
         )}
       </Box>
+      <Box
+        sx={{
+          position:"absolute", 
+          top:"50%", 
+          left:"50%", 
+          transform:"translate(-50%,-50%)",
+          maxWidth:"280px",
+          textAlign:"center",
+          background:"#FFFFFF",
+          border:"2px solid #d90000",
+          padding:"24px 10px",
+          fontWeight:"600",
+        }}
+      >
+        현재 서버관련 오류 해결 중입니다. 일요일까지 복구 예정이니 양해 부탁드립니다
+      </Box>
     </Box>
   );
 };
