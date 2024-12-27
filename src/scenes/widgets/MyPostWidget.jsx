@@ -39,7 +39,7 @@ const MyPostWidget = ({ picturePath , isProfile}) => {
       return
     }
 
-    const response = await fetch(`http://localhost:3500/posts`, {
+    const response = await fetch(`https://yujins.p-e.kr/posts`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
       body: formData,
