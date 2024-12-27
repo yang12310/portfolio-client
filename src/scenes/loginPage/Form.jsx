@@ -95,7 +95,7 @@ const Form = () => {
     }
   };
 
-    //자바스크립트에서 기본적으로 주는 함수 
+  //자바스크립트에서 기본적으로 주는 함수 
   const handleFormSubmit = async (values, onSubmitProps) => {
     if (isLogin) await login(values, onSubmitProps);
     if (isRegister) await register(values, onSubmitProps);

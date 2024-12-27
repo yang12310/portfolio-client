@@ -34,20 +34,24 @@ const LoginPage = () => {
                 >
                   U-Jeans
                 </Typography>
-                <Typography textAlign = "center" fontWeight="500" variant="h5" sx={{ mb: "2rem" }}>
-                  ID: guest@mail.com <br />Password: guest <br />를 이용하여 U-Jeans에 로그인할 수 있습니다. 
+                <Typography textAlign = "center" fontWeight="500"
+                  sx={{ mb: "2rem" }}>
+                  <strong>ID</strong> : guest@mail.com <br />
+                  <strong>Password</strong> : guest <br />
                 </Typography>
                 <Form />
               </Box>
               <Box sx={{marginTop:"1rem", textAlign:"right"}}>
                 <a href="https://yang12310.github.io/tutorial-desc/" target="_blank"
-                style={{background: "#e9e5ff", color:"#333",
+                  style={{background: "#e9e5ff", color:"#333",
                   padding: "10px 16px",
                   border: "1px solid #634af3",
                   display: "inline-block",
                   borderRadius: "8px",
                   textDecoration: "none"}}
-                >Portfolio 상세설명 보기</a>
+                >
+                  Portfolio 상세설명 보기
+                </a>
               </Box>
             </Box>
           </FlexBetween>
