@@ -17,7 +17,7 @@ const PostsWidget = ({ userId, isProfile, searchValue }) => {
 
 
   const getPosts = async () => {
-    const response = await fetch("https://yujins.p-e.kr/posts", {
+    const response = await fetch("http://localhost:3500/posts", {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -34,7 +34,7 @@ const PostsWidget = ({ userId, isProfile, searchValue }) => {
 
   const getUserPosts = async () => {
     const response = await fetch(
-      `https://yujins.p-e.kr/posts/${userId}/posts`,
+      `http://localhost:3500/posts/${userId}/posts`,
       {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },

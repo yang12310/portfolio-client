@@ -38,7 +38,7 @@ const PostWidget = ({
     if(isLock.current) { return; }
     
     isLock.current = true;
-    const response = await fetch(`https://yujins.p-e.kr/posts/${postId}/like`, {
+    const response = await fetch(`http://localhost:3500/posts/${postId}/like`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -71,7 +71,7 @@ const PostWidget = ({
           height="auto"
           alt="post"
           style={{ borderRadius: "0.75rem", marginTop: "1rem", objectFit:"cover" }}
-          src={`https://yujins.p-e.kr/assets/${picturePath}`}
+          src={`http://localhost:3500/assets/${picturePath}`}
         />
       )}
 

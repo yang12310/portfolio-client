@@ -18,12 +18,12 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
   const primaryMain = palette.primary.main;
   const medium = palette.neutral.medium;
 
-  const isFriend = friends.find((friend) => friend._id === friendId);
+  const isFriend = friends?.find((friend) => friend._id === friendId);
 
   const patchFriend = async () => {
     if(_id !== friendId){
       const response = await fetch(
-        `https://yujins.p-e.kr/users/${_id}/${friendId}`,
+        `http://localhost:3500/users/${_id}/${friendId}`,
         {
           method: "PATCH",
           headers: {
