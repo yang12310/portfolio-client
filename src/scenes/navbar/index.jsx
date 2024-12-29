@@ -45,7 +45,7 @@ const Navbar = ({searchValue}) => {
             width="270px"
             height="auto"
             alt="main"
-            src="http://localhost:3500/assets/logo1.png"
+            src="https://yujins.p-e.kr/assets/logo1.png"
           />
       </Box>) :(
           <Box
@@ -61,7 +61,7 @@ const Navbar = ({searchValue}) => {
             width="170px"
             height="auto"
             alt="main"
-            src="http://localhost:3500/assets/logo1.png"
+            src="https://yujins.p-e.kr/assets/logo1.png"
           />
       </Box>
       )}
